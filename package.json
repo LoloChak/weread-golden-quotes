@@ -1,0 +1,37 @@
+{
+  "name": "weread-golden-quotes",
+  "version": "1.0.0",
+  "description": "微信读书金句网页生成器 — 从读书笔记中提取每日金句，生成宣纸质感的人文风网页",
+  "keywords": [
+    "weread",
+    "wechat-read",
+    "highlights",
+    "quotes",
+    "skill"
+  ],
+  "skill": {
+    "name": "weread-golden-quotes",
+    "description": "从微信读书笔记生成每日金句网页，京华老宋体+宣纸底纹人文风格",
+    "triggers": [
+      "生成金句网页",
+      "微信读书金句",
+      "读书笔记生成网页",
+      "每日金句",
+      "读书划线导出"
+    ]
+  },
+  "main": "scripts/fetch_quotes.py",
+  "scripts": {
+    "postinstall": "echo '✅ weread-golden-quotes 安装成功！' && echo '📖 使用方式：export WEREAD_API_KEY=\"wrk-xxx\" && python scripts/fetch_quotes.py -o ./output'"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "LoloChak",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LoloChak/weread-golden-quotes.git"
+  }
+}
