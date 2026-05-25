@@ -21,8 +21,9 @@
 
 ### 前置条件
 
-1. **微信读书 API Key**（格式 `wrk-xxxxxxxx`）
-   - 打开微信读书 App →「我」→「设置」→「账户与安全」→ 生成 Agent API Key
+1. **微信读书 Agent Gateway API Key**（格式 `wrk-xxxxxxxx`）
+   - 方式一：通过 [WorkBuddy](https://www.codebuddy.cn/) 安装微信读书 Skill，自动获取 API Key
+   - 方式二：在微信读书网页版登录后，通过浏览器开发者工具抓取请求中的 Bearer Token
 
 2. **Python 3.6+** 和 `requests` 库
    ```bash
@@ -36,7 +37,7 @@
 export WEREAD_API_KEY="wrk-xxxxxxxx"
 
 # 2. 克隆仓库
-git clone https://github.com/your-username/weread-golden-quotes.git
+git clone https://github.com/LoloChak/weread-golden-quotes.git
 cd weread-golden-quotes
 
 # 3. 运行生成脚本
@@ -170,7 +171,13 @@ weread-golden-quotes/
 ## 常见问题
 
 ### Q: API Key 在哪里获取？
-打开微信读书 App →「我」→「设置」→「账户与安全」→ 找到「Agent API Key」并生成。
+本项目使用微信读书 Agent Gateway API（`i.weread.qq.com`），获取方式：
+
+**方式一（推荐）：** 安装 [WorkBuddy](https://www.codebuddy.cn/)，通过内置的微信读书 Skill 自动获取 API Key。
+
+**方式二：** 在微信读书网页版 (weread.qq.com) 登录后，打开浏览器开发者工具（F12），在 Network 面板中找到任意请求，复制请求头中的 `access_token` 值（格式为 `wrk-xxxxxxxx`）。
+
+> ⚠️ API Key 属于个人隐私，请勿分享或提交到公开仓库。
 
 ### Q: 首次运行需要多久？
 取决于你的笔记数量。100 本书大约 2-3 分钟，400+ 本书可能需要 10 分钟左右。
